@@ -1,5 +1,5 @@
 /*
-  Blink All
+  Blink All Lights
  Turns on each LED on for one-tenth of a second, then off for for one-tenth of a second, repeatedly.
  */
 
