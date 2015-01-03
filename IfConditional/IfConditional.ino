@@ -2,8 +2,8 @@
 //Explanation: http://arduino.cc/en/Reference/If
 //Explanation: http://arduino.cc/en/Reference/Random
 
-long randnumber;                 //long is another data type, holds a 32 bit numberfloa
-float fun=.1;
+byte randNumber;                 //variable for random seed
+
 void setup() {                   //set up outputs
   pinMode(8, OUTPUT);
   pinMode(9, OUTPUT);
@@ -13,25 +13,28 @@ void setup() {                   //set up outputs
 }
 
 void loop() {
-  randnumber= random(9);         //pick a random number between 0 and 5
-  Serial.println(randnumber);    //prints the random number to the serial window
+  randNumber= random(9);         //pick a random number between 0 and 5
+  Serial.println(randNumber);    //prints the random number to the serial window
 
-  if (randnumber==0){          //if conditional statement compares randnumber to 0. 
-    Serial.print("hello");              // wait for a second
+  if (randNumber==0){          //if conditional statement compares randnumber to 0. 
+    digitalWrite(8, HIGH);   
+    delay(200);               
+    digitalWrite(8, LOW);   
+    delay(200);             // wait for a second
   }                            //end of conditional statement
-  if (randnumber==1){
+  if (randNumber==1){
     digitalWrite(9, HIGH);   
     delay(200);               
     digitalWrite(9, LOW);   
-    delay(200);               
+    delay(200);     
   }
-  if (randnumber==2){
+  if (randNumber==2){
     digitalWrite(10, HIGH);   
     delay(200);               
     digitalWrite(10, LOW);    
-    delay(fun);               
+    delay(200);    
   }
-  if (randnumber!=0 && randnumber!=1 && randnumber!=2){  //use "&&" to test multiple conditions, use != for NOT equal to
+  if (randNumber!=0 && randNumber!=1 && randNumber!=2){  //use "&&" to test multiple conditions, use != for NOT equal to
     digitalWrite(8, HIGH);   
     digitalWrite(9, HIGH);   
     digitalWrite(10, HIGH);   
