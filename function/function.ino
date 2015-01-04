@@ -1,23 +1,15 @@
-int led0 = 5;           // the pin that the LED is attached to
-int led1 = 6;           // the pin that the LED is attached to
-int led2 = 7;           // the pin that the LED is attached to NO PWM
-int led3 = 8;           // the pin that the LED is attached to NO PWM
-int led4 = 9;           // the pin that the LED is attached to
-int led5 = 10;          // the pin that the LED is attached to
-int led6 = 11;          // the pin that the LED is attached to
-int led7 = 12;          // the pin that the LED is attached to NO PWM
-int brightness = 0;     // LED brightness
-int fadeAmount = 2;     // how many levels to fade the LED by 0=off 255=full bright
+byte brightness = 0;     // LED brightness
+byte fadeAmount = 2;     // how many levels to fade the LED by 0=off 255=full bright
 
 void setup()  {           //set pins as outputs
-  pinMode(led0, OUTPUT);  
-  pinMode(led1, OUTPUT);  
-  pinMode(led2, OUTPUT);
-  pinMode(led3, OUTPUT);
-  pinMode(led4, OUTPUT);
-  pinMode(led5, OUTPUT);
-  pinMode(led6, OUTPUT);
-  pinMode(led7, OUTPUT);
+  pinMode(5, OUTPUT);  
+  pinMode(6, OUTPUT);  
+  pinMode(7, OUTPUT); //NO PWM
+  pinMode(8, OUTPUT); //NO PWM
+  pinMode(9, OUTPUT);
+  pinMode(10, OUTPUT);
+  pinMode(11, OUTPUT);
+  pinMode(12, OUTPUT); //NO PWM
 } 
 
 void loop() {             //main loop
@@ -26,45 +18,41 @@ void loop() {             //main loop
 }                         //end main loop
 
 void fade(){                                   //fade function starts here
-for (int fadein=0;fadein<254;fadein++){
+  //------fade in loop--------------
+  for (int brightness=0;brightness<=254;brightness++){
     // set the brightness for the LEDs that support PWM
-    analogWrite(led0, brightness);
-    analogWrite(led1, brightness);
-    analogWrite(led4, brightness);
-    analogWrite(led5, brightness);  
-    analogWrite(led6, brightness);  
-
-    // change the brightness for next time through the loop
-    brightness = brightness + 1;
-    // wait for 2 milliseconds to see the dimming effect    
+    analogWrite(5, brightness);
+    analogWrite(6, brightness);
+    analogWrite(9, brightness);
+    analogWrite(10, brightness);  
+    analogWrite(11, brightness);  
+    // wait for 2 milliseconds to see the effect    
     delay(2); 
   }
   //-----end of fade in loop---------
-  //------fade out loop--------------
-  for (int fadeout=0;fadeout<254;fadeout++){
-    // set the brightness for the LEDs that support PWM
-    analogWrite(led0, brightness);
-    analogWrite(led1, brightness);
-    analogWrite(led4, brightness);
-    analogWrite(led5, brightness);  
-    analogWrite(led6, brightness);  
 
-    // change the brightness for next time through the loop
-    brightness = brightness - 1;
-    // wait for 2 milliseconds to see the dimming effect    
+  //------fade out loop--------------
+  for (int brightness=254;brightness>=0;brightness--){
+    // set the brightness for the LEDs that support PWM
+    analogWrite(5, brightness);
+    analogWrite(6, brightness);
+    analogWrite(9, brightness);
+    analogWrite(10, brightness);  
+    analogWrite(11, brightness);  
+    // wait for 2 milliseconds to see the effect    
     delay(2); 
   }
+  //-----end of fade out loop---------
+
+  brightness=0;                                //make sure brightness is set at before loop restarts
 }                                              //fade function ends here, return where main code left off
 
-void flash(){                                  //fade function starts here
-  for (int counter=0; counter<20;counter++){
-    digitalWrite (led2, HIGH);
-    digitalWrite (led3, HIGH);
-    digitalWrite (led7, HIGH);
-    delay(20);
-    digitalWrite (led2, LOW);
-    digitalWrite (led3, LOW);
-    digitalWrite (led7, LOW);
+void flash(){                                  //flash function starts here
+  for (int i=0; i<=20;i++){
+    digitalWrite(7, !digitalRead(7));          //read the value of a pin an invert it
+    digitalWrite(8, !digitalRead(8));
+    digitalWrite(12, !digitalRead(12));
     delay(20);
   }     
-}                                              //fade function ends here, return where main code left off
+}                                              //flash function ends here, return where main code left off
+
