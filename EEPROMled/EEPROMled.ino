@@ -1,7 +1,7 @@
 #include <EEPROM.h>                           //include library
 
 byte led = 12;
-int stored;                                   //data stored in EEPROM
+byte stored;                                   //data stored in EEPROM
 int address = 0;                              //location in EEPROM
 
 void setup() {
