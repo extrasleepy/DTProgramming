@@ -4,8 +4,8 @@ http://arduino.cc/en/Tutorial/Variables
  */
  
 // set a pin to be a variable:
-int led = 12;       //variables up from -32,768 to 32,767
-float originalTime = 5;    //allows floating point variables 
+int led = 12;           //int allows variables up from -32,768 to 32,767
+float time = 5;         //allows floating point variables 
 float moreTime = 2.2;   //allows floating point variables
 
 void setup() {                
@@ -16,10 +16,10 @@ void setup() {
 
 void loop() {
   digitalWrite(led, HIGH);       // turn the LED on (HIGH is the voltage level 5v)
-  delay(originalTime);               // wait for "interval" time
+  delay(time);                   // wait for "time"
   digitalWrite(led, LOW);        // turn the LED off by making the voltage LOW
-  delay(originalTime);               // wait for "interval" time
-  originalTime = originalTime + moreTime;   //increase interval by adding the value of "addtime"
-  Serial.print("interval=");     //prints the word "interval" on the screen
-  Serial.println (originalTime);     //prints the VALUE of "interval" and makes a new line
+  delay(time);                   // wait for "time"
+  time = time + moreTime;        //increase interval by adding the value of "moreTime"
+  Serial.print("time=");         //prints the word "time=" on the screen
+  Serial.println (time);         //prints the VALUE of time and makes a new line
 }
