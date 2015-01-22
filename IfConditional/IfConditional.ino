@@ -13,7 +13,7 @@ void setup() {                   //set up outputs
 }
 
 void loop() {
-  randNumber= random(9);         //pick a random number between 0 and 5
+  randNumber= random(9);         //pick a random number between 0 and 8
   Serial.println(randNumber);    //prints the random number to the serial window
 
   if (randNumber==0){          //if conditional statement compares randnumber to 0. 
