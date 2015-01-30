@@ -1,6 +1,5 @@
 // LED Fadeing Example (PWM)   http://arduino.cc/en/Reference/AnalogWrite
 
-byte brightness = 0;     // LED brightness
 
 void setup()  { 
   pinMode(5, OUTPUT);  
@@ -40,7 +39,6 @@ void loop()  {
   }
   //-----end of fade out loop---------
 
-  brightness=0;   //make sure brightness is set at before loop restarts
 }
 
 
