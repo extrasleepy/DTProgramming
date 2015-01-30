@@ -1,5 +1,4 @@
-byte brightness = 0;     // LED brightness
-byte fadeAmount = 2;     // how many levels to fade the LED by 0=off 255=full bright
+//example of how to write Arduino functions()
 
 void setup()  {           //set pins as outputs
   pinMode(5, OUTPUT);  
@@ -43,8 +42,6 @@ void fade(){                                   //fade function starts here
     delay(2); 
   }
   //-----end of fade out loop---------
-
-  brightness=0;                                //make sure brightness is set at before loop restarts
 }                                              //fade function ends here, return where main code left off
 
 void flash(){                                  //flash function starts here
