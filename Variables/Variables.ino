@@ -5,7 +5,7 @@ http://arduino.cc/en/Tutorial/Variables
  
 // set a pin to be a variable:
 int led = 12;           //int allows variables up from -32,768 to 32,767
-float time = 5;         //allows floating point variables 
+float time = 5.0;         //allows floating point variables 
 float moreTime = 2.2;   //allows floating point variables
 
 void setup() {                
