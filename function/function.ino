@@ -46,10 +46,15 @@ void fade(){                                   //fade function starts here
 
 void flash(){                                  //flash function starts here
   for (int i=0; i<=20;i++){
-    digitalWrite(7, !digitalRead(7));          //read the value of a pin an invert it
-    digitalWrite(8, !digitalRead(8));
-    digitalWrite(12, !digitalRead(12));
+    digitalWrite(7,HIGH);          //read the value of a pin an invert it
+    digitalWrite(8,HIGH);
+    digitalWrite(12,HIGH);
+    delay(20);
+    digitalWrite(7,LOW);          //read the value of a pin an invert it
+    digitalWrite(8,LOW);
+    digitalWrite(12,LOW);
     delay(20);
   }     
 }                                              //flash function ends here, return where main code left off
+
 

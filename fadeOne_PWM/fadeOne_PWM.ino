@@ -1,6 +1,5 @@
 // Fade One LED with (PWM)   http://arduino.cc/en/Reference/AnalogWrite
 
-
 void setup()  { 
   pinMode(5, OUTPUT);  
 } 
@@ -10,7 +9,7 @@ void loop()  {
     analogWrite(5, i);
     delay(1);
   }
-  for(int i=255;i>0;i--){   //fade in
+  for(int i=255;i>0;i--){   //fade out
     analogWrite(5, i);
     delay(1);
   }
