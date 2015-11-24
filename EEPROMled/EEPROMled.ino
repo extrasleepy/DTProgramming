@@ -27,7 +27,7 @@ void loop() {                                 //one of 3 functions runs based on
     slow();
     break;
   case 2:
-    seizure();
+    disco();
     break;
   }
 
@@ -47,7 +47,7 @@ void slow() {
   delay(1000);
 }
 
-void seizure() {
+void disco() {
   digitalWrite(led, HIGH);
   delay(25);
   digitalWrite(led, LOW);
