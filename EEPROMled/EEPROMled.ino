@@ -9,8 +9,8 @@ void setup() {
   pinMode(led, OUTPUT);
 
   stored = EEPROM.read(address);              // reads the data stored in address 0 and assigns to variable
-  Serial.println(stored);                     // Serial print the value
   stored++;                                   //increment value
+  Serial.println(stored);                     // Serial print the value
 
   if (stored > 2) {                           //set this number based on how many different functions you want
     stored = 0;                              
