@@ -44,9 +44,9 @@ void loop() {
   digitalWrite(6, HIGH);   
   delay(flash);               
   digitalWrite(6, LOW);    
-  digitalWrite(5, HIGH);   
+  digitalWrite(0, HIGH);   
   delay(flash);               
-  digitalWrite(5, LOW);    
+  digitalWrite(0, LOW);    
   Serial.println("looping");    // communication sent back to serial window on PC - ln is a line break
 }
 

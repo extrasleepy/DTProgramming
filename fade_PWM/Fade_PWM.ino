@@ -14,7 +14,7 @@ void setup()  {
 
 void loop()  { 
   //------fade in loop--------------
-  for (int brightness=0;brightness<=254;brightness++){
+  for (int brightness=0;brightness<=255;brightness++){
     // set the brightness for the LEDs that support PWM
     analogWrite(5, brightness);
     analogWrite(6, brightness);
@@ -27,7 +27,7 @@ void loop()  {
   //-----end of fade in loop---------
 
   //------fade out loop--------------
-  for (int brightness=254;brightness>=0;brightness--){
+  for (int brightness=255;brightness>=0;brightness--){
     // set the brightness for the LEDs that support PWM
     analogWrite(5, brightness);
     analogWrite(6, brightness);
