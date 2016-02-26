@@ -17,7 +17,7 @@ void loop()  {                                                //fade LEDs in one
       delay(10);  
     }      
   }                                                          //fade LEDs out one at a time
-  for (int i = pins; i > 0; i--) {
+  for (int i = pins-1; i > 0; i--) {
     for (int brightness=254;brightness>0;brightness--){
       analogWrite(myArray[i],brightness);
       delay(10);  
