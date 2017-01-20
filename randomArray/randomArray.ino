@@ -4,11 +4,11 @@ int numPins = 8;                                  // the number of pins in the a
 int randomLed;
 
 void setup()  { 
-  for (int i = 0; i < numPins; i++)  {                       //use an array to set all pins as outputs
+  for (int i = 0; i < numPins; i++)  {   //use an array to set all pins as outputs
     pinMode(myArray[i], OUTPUT);      
   }
-  Serial.begin(9600);           //set up serial communication
-  randomSeed(analogRead(0));    //this will make psudo random numbers seem more random
+  Serial.begin(9600);                   //set up serial communication
+  randomSeed(analogRead(0));            //this will make psudo random numbers seem more random
 } 
 
 void loop()  {
