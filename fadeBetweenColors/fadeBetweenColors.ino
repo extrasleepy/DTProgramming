@@ -3,7 +3,7 @@
 #define PIN            6  // Which pin on the Arduino is connected to the NeoPixels?
 #define NUMPIXELS      5  // How many NeoPixels are attached to the Arduino?
 
-int fadeSpeed = 5;
+int fadeSpeed = 5;     //variable to determine fade speed
 
 // When we setup the NeoPixel library object, we tell it how many pixels, and which pin to use to send signals.
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
