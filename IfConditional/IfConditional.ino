@@ -1,50 +1,56 @@
-//Conditionals - If statement
-//Explanation: http://arduino.cc/en/Reference/If
-//Explanation: http://arduino.cc/en/Reference/Random
+#include <Adafruit_NeoPixel.h>   //include library
 
-byte randNumber;                 //variable for random seed
+#define PIN            6  // Which pin on the Arduino is connected to the NeoPixels?
+#define NUMPIXELS      5  // How many NeoPixels are attached to the Arduino?
 
-void setup() {                   //set up outputs
-  pinMode(8, OUTPUT);
-  pinMode(9, OUTPUT);
-  pinMode(10, OUTPUT);
+int randNumber;                 //variable for random seed
+int chaseTime = 30;
+
+// When we setup the NeoPixel library object, we tell it how many pixels, and which pin to use to send signals.
+Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PIN, NEO_GRB + NEO_KHZ800);
+
+void setup() {
+  pixels.begin();               // This initializes the NeoPixel library.
   Serial.begin(9600);           //set up serial communication
   randomSeed(analogRead(0));    //this will make psudo random numbers seem more random
 }
 
 void loop() {
-  randNumber= random(9);         //pick a random number between 0 and 8
+  randNumber = random(6);        //pick a random number between 0 and 6
   Serial.println(randNumber);    //prints the random number to the serial window
 
-  if (randNumber==0){          //if conditional statement compares randnumber to 0. 
-    digitalWrite(8, HIGH);   
-    delay(200);               
-    digitalWrite(8, LOW);   
-    delay(200);             // wait for a second
-  }                            //end of conditional statement
-  if (randNumber==1){
-    digitalWrite(9, HIGH);   
-    delay(200);               
-    digitalWrite(9, LOW);   
-    delay(200);     
+  if (randNumber == 0) {       //if conditional statement compares randnumber to 0.
+    for (int pixel = 0; pixel <= NUMPIXELS; pixel++) {
+      pixels.setPixelColor(pixel, 0, 0, 255); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
+      pixels.show();
+      delay(chaseTime);               
+    }
+  }//end of conditional statement
+
+  if (randNumber == 1) {
+    for (int pixel = 0; pixel <= NUMPIXELS; pixel++) {
+      pixels.setPixelColor(pixel, 255, 0, 0); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
+      pixels.show();
+      delay(chaseTime);                
+    }
   }
-  if (randNumber==2){
-    digitalWrite(10, HIGH);   
-    delay(200);               
-    digitalWrite(10, LOW);    
-    delay(200);    
+
+  if (randNumber == 2) {
+    for (int pixel = 0; pixel <= NUMPIXELS; pixel++) {
+      pixels.setPixelColor(pixel, 0, 255, 0); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
+      pixels.show();
+      delay(chaseTime);                
+    }
   }
-  if (randNumber!=0 && randNumber!=1 && randNumber!=2){  //use "&&" to test multiple conditions, use != for NOT equal to
-    digitalWrite(8, HIGH);   
-    digitalWrite(9, HIGH);   
-    digitalWrite(10, HIGH);   
-    delay(100);               
-    digitalWrite(8, LOW);    
-    digitalWrite(9, LOW);    
-    digitalWrite(10, LOW);    
-    delay(100);               
+  if (randNumber >= 3) {
+    for (int pixel = 0; pixel <= NUMPIXELS; pixel++) {
+      pixels.setPixelColor(pixel, 255, 255, 255); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
+      pixels.show();
+      delay(chaseTime);              
+    }
   }
-}                                                      //end of main loop
+  delay(500);    // wait for half second before running loop again
+}                 //end of main loop
 
 
 
