@@ -46,14 +46,14 @@ void greenFlash() {
     pixels.setPixelColor(3, 0, 255, 0);
     pixels.setPixelColor(4, 0, 255, 0);
     pixels.show();
-    delay(70);
+    delay(20);
     pixels.setPixelColor(0, 0, 0, 0);
     pixels.setPixelColor(1, 0, 0, 0);
     pixels.setPixelColor(2, 0, 0, 0);
     pixels.setPixelColor(3, 0, 0, 0);
     pixels.setPixelColor(4, 0, 0, 0);
     pixels.show();
-    delay(70);
+    delay(20);
    }
 }
 
