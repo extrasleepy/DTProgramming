@@ -15,18 +15,18 @@ void loop() {
     digitalWrite(led, LOW);                            // turn the pin off:
     delay(timer);
   }                                                   //end of nested for loop
-  for (int i=0; i<= 10; i++) {   //a for loop that will flash LED 11 times
-    digitalWrite(led, HIGH);    
-    delay(timer-100);                  
-    digitalWrite(led, LOW);   
-    delay(timer-100);
-  }                                                  //end of nested for loop
-  for (int i=30; i> 0; i--) {  //a for loop that will flash LED 30 times
-    digitalWrite(led, HIGH);                                                   
-    delay(timer-150);                  
-    digitalWrite(led, LOW);                                                     
-    delay(timer-150);
-  }                                                 //end of nested for loop
+//   for (int i=0; i<= 10; i++) {   //a for loop that will flash LED 11 times
+//     digitalWrite(led, HIGH);    
+//     delay(timer-100);                  
+//     digitalWrite(led, LOW);   
+//     delay(timer-100);
+//   }                                                  //end of nested for loop
+//   for (int i=30; i> 0; i--) {  //a for loop that will flash LED 30 times
+//     digitalWrite(led, HIGH);                                                   
+//     delay(timer-150);                  
+//     digitalWrite(led, LOW);                                                     
+//     delay(timer-150);
+//   }                                                 //end of nested for loop
 }                                                   //end of main loop
 
 
