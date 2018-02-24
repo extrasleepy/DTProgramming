@@ -16,13 +16,13 @@ void loop() {
 
   for (int level = 0; level <= 255; level++) {
     pixels.setPixelColor(0, level, 0, 255-level); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
-    pixels.setPixelColor(4, 255-level, 0, level); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
+    //pixels.setPixelColor(4, 255-level, 0, level); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
     pixels.show();
     delay(fadeSpeed);
   }
    for (int level = 0; level <= 255; level++) {
     pixels.setPixelColor(0, 255-level, 0, level); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
-    pixels.setPixelColor(4, level, 0, 255-level); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
+   // pixels.setPixelColor(4, level, 0, 255-level); //parameters are (LED number in chain, Red 0-255, Green 0-255, Blue 0-255)
     pixels.show();
     delay(fadeSpeed);
   }
