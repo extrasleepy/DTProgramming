@@ -9,7 +9,7 @@ void setup() {
 }                        //setup ends here
          
 void loop() {
-  for (int i=0; i<= 5; i++) {   //a for loop that will flash LED 6 times
+  for (int times=0; times<= 5; times= times + 1) {   //a for loop that will flash LED 6 times
     digitalWrite(led, HIGH);                           // turn the pin on:
     delay(timer);                                     //light stays on for value: "timer"
     digitalWrite(led, LOW);                            // turn the pin off:
